@@ -6,8 +6,13 @@ const inputSearchButton = () => {
     // .then(data => showSearchResult(data.data))
     // .then(data => console.log(data));
     .then((data) => {
-      if (data.data == null) {
-        alert('not')
+      if (data.data.length <= 0) {
+        alert('nothing found')
+        // Swal.fire("Any fool can use a computer");
+        const parent = document.getElementById("search-results");
+        parent.innerHTML = "";
+        const parentPhone = document.getElementById("phone-details");
+        parentPhone.innerHTML = "";
       }
       else {
         showSearchResult(data.data)
@@ -25,9 +30,9 @@ const showSearchResult = (phones) => {
   showTwenty.forEach(phone => {
     // console.log(phone);
     const div = document.createElement("div")
-    div.classList.add("row")
+    div.classList.add("col-md-4")
     div.innerHTML = `
-    <div class="card col-12 col-lg-4" style="width: 18rem;">
+    <div class="card" style="width: 18rem;">
       <img src="${phone.image}" class="card-img-top img-fluid" alt="Phone Image">
     <div class="card-body">
       <h5 class="card-title">${phone.phone_name}</h5>
@@ -66,8 +71,6 @@ const phoneDetails = details => {
     <p>Memory: ${details.mainFeatures.memory}</p>
     <p>Sensors: ${Object.values(details.mainFeatures.sensors)}.</p>
     
-    
-    
     <h6>Basic features:</h6>
     <p>Wlan: ${details.others.WLAN}</p>
     <p>Bluetooth: ${details.others.Bluetooth}</p>
@@ -78,30 +81,3 @@ const phoneDetails = details => {
   </div>
   `;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*     `
-    <img src="${phone.image}" alt="">
-    <h2>Brand: ${phone.brand}</h2>
-    <h3>Phone Name: ${phone.phone_name}</h3>
-    ` */

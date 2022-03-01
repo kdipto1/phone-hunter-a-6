@@ -22,7 +22,7 @@
 <body>
 <!-- Header/site title section +++++++++-->
 <header class="bg-primary p-2">
-  <h1 class="text-center text-white">
+  <h1  onClick="window.location.reload();" class="text-center text-white">
     <i class="fa-solid fa-mobile-button"></i>
     Mobile Master
     <i class="fa-solid fa-mobile-button"></i>
@@ -33,9 +33,9 @@
 <!-- search section+++++++ 😀-->
 <section>
 <div class="input-group m-3 w-50 mx-auto">
-  <input id="search-field" type="text" class="form-control" placeholder="Search Mobile" aria-label="Search Mobile"
+  <input onkeyup="if(event.keyCode===13){submit.click()}" id="search-field" type="text" class="form-control" placeholder="Search Mobile" aria-label="Search Mobile"
     aria-describedby="button-addon2">
-  <button onclick="inputSearchButton()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+  <button id="submit" onclick="inputSearchButton()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
 </div>
 </section>
 <!-- search section+++++++ 😀-->
@@ -48,7 +48,7 @@
 <!-- on tap phone details show😀-->
 
 <!-- search result show of all phone😀++++++++++++++++++++++++-->
-<section id="search-results" class="card-group">
+<section id="search-results" class="card-group container mx-auto">
 
 </section>
 <!-- search result show of all phone😀++++++++++++++++++++++++-->
