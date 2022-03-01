@@ -7,15 +7,18 @@ const inputSearchButton = () => {
     // .then(data => console.log(data));
     .then((data) => {
       if (data.data.length <= 0) {
-        alert('nothing found')
+        // alert('nothing found')
+        document.getElementById("found-nothing").style.display = "block"; 
         // Swal.fire("Any fool can use a computer");
         const parent = document.getElementById("search-results");
         parent.innerHTML = "";
         const parentPhone = document.getElementById("phone-details");
         parentPhone.innerHTML = "";
+        document.getElementById("found").innerText = "";
       }
       else {
         showSearchResult(data.data)
+        document.getElementById("found-nothing").style.display = "none";
       }
     });
 }
@@ -26,9 +29,13 @@ const showSearchResult = (phones) => {
   const parentPhone = document.getElementById("phone-details");
   parentPhone.innerHTML = "";
   // console.log(phones);
+  
   const showTwenty = phones.slice(0, 20);
+  document.getElementById("found").innerText = phones.length;
+  // console.log(phones.length);
   showTwenty.forEach(phone => {
-    // console.log(phone);
+    console.log(phone.length);
+    
     const div = document.createElement("div")
     div.classList.add("col-lg-4")
     div.classList.add("col-12")
