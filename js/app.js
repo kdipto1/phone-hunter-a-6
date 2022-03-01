@@ -30,15 +30,17 @@ const showSearchResult = (phones) => {
   showTwenty.forEach(phone => {
     // console.log(phone);
     const div = document.createElement("div")
+    div.classList.add("col-lg-3")
     div.classList.add("col-md-4")
+    div.classList.add("col-12")
     div.innerHTML = `
-    <div class="card" style="width: 18rem;">
-      <img src="${phone.image}" class="card-img-top img-fluid" alt="Phone Image">
+    <div class="card p-4 m-2" style="width: 18rem;">
+      <img src="${phone.image}" class="card-img-top img-fluid h-50" alt="Phone Image">
     <div class="card-body">
       <h5 class="card-title">${phone.phone_name}</h5>
-      <h5 class="card-title">${phone.brand}</h5>
+      <h6 class="card-title">${phone.brand}</h6>
        
-      <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-primary">Go somewhere</a>
+      <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-outline-primary">See Details</a>
     </div>
     </div>
     `;
@@ -65,19 +67,21 @@ const phoneDetails = details => {
     <h4>${details.name}</h4>
     <p>${details?.releaseDate || "Comming soon"}</p>
     <h6>Main features:</h6>
-    <p>Storage: ${details.mainFeatures.storage}</p>
-    <p>Display Size: ${details.mainFeatures.displaySize}</p>
-    <p>ChipSet: ${details.mainFeatures.chipSet}</p>
-    <p>Memory: ${details.mainFeatures.memory}</p>
-    <p>Sensors: ${Object.values(details.mainFeatures.sensors)}.</p>
+    <p>Storage: ${details?.mainFeatures?.storage || "No data found"}</p>
+    <p>Display Size: ${details?.mainFeatures?.displaySize || "No data found"}</p>
+    <p>ChipSet: ${details?.mainFeatures?.chipSet || "No data found"}</p>
+    <p>Memory: ${details?.mainFeatures?.memory || "No data found"}</p>
+    <p>Sensors: ${
+      Object.values(details?.mainFeatures?.sensors) || "No data found"
+    }.</p>
     
     <h6>Basic features:</h6>
-    <p>Wlan: ${details.others.WLAN}</p>
-    <p>Bluetooth: ${details.others.Bluetooth}</p>
-    <p>GPS: ${details.others.GPS}</p>
-    <p>NFC: ${details.others.NFC}</p>
-    <p>Radio: ${details.others.Radio}</p>
-    <p>USB: ${details.others.USB}</p>
+    <p>Wlan: ${details?.others?.WLAN || "No data found"}</p>
+    <p>Bluetooth: ${details?.others?.Bluetooth || "No data found"}</p>
+    <p>GPS: ${details?.others?.GPS || "No data found"}</p>
+    <p>NFC: ${details?.others?.NFC || "No data found"}</p>
+    <p>Radio: ${details?.others?.Radio || "No data found"}</p>
+    <p>USB: ${details?.others?.USB || "No data found"}</p>
   </div>
   `;
 }
