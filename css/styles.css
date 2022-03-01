@@ -6,3 +6,6 @@
 }
 /* common styles */
 
+#found-nothing{
+  display: none;
+}

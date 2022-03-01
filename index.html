@@ -22,7 +22,7 @@
 <body>
 <!-- Header/site title section +++++++++-->
 <header class="bg-info p-2">
-  <h1  onClick="window.location.reload();" class="text-center text-light">
+  <h1 title="Click to refresh this page" onClick="window.location.reload();" class="text-center text-light">
     <i class="fa-solid fa-mobile-button"></i>
     Mobile Master
     <i class="fa-solid fa-mobile-button"></i>
@@ -36,6 +36,10 @@
   <input onkeyup="if(event.keyCode===13){submit.click()}" id="search-field" type="text" class="form-control" placeholder="Search Mobile" aria-label="Search Mobile"
     aria-describedby="button-addon2">
   <button id="submit" onclick="inputSearchButton()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+</div>
+
+<div id="found-nothing" class="text-center">
+  <h4>No search result found, try again!</h4>
 </div>
 </section>
 <!-- search section+++++++ 😀-->
