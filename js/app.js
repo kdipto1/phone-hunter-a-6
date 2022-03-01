@@ -38,16 +38,16 @@ const showSearchResult = (phones) => {
         div.classList.add("col-lg-4");
         div.classList.add("col-12");
         div.innerHTML = `
-    <div class="card p-4 m-2" style="width: 18rem;">
-      <img src="${phone.image}" class="card-img-top img-fluid h-50" alt="Phone Image">
-    <div class="card-body">
-      <h5 class="card-title">${phone.phone_name}</h5>
-      <h6 class="card-title">${phone.brand}</h6>
-       
-      <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-outline-primary">See Details</a>
-    </div>
-    </div>
-    `;
+          <div class="card p-4 m-2" style="width: 18rem;">
+            <img src="${phone.image}" class="card-img-top img-fluid h-50" alt="Phone Image">
+          <div class="card-body">
+            <h5 class="card-title">${phone.phone_name}</h5>
+            <h6 class="card-title">${phone.brand}</h6>
+            
+            <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-outline-primary">See Details</a>
+          </div>
+          </div>
+          `;
         parent.appendChild(div);
       });
   /* 😀show more than 20 phones😀 */
@@ -63,16 +63,16 @@ const showSearchResult = (phones) => {
           div.classList.add("col-lg-4");
           div.classList.add("col-12");
           div.innerHTML = `
-    <div class="card p-4 m-2" style="width: 18rem;">
-      <img src="${phone.image}" class="card-img-top img-fluid h-50" alt="Phone Image">
-    <div class="card-body">
-      <h5 class="card-title">${phone.phone_name}</h5>
-      <h6 class="card-title">${phone.brand}</h6>
-       
-      <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-outline-primary">See Details</a>
-    </div>
-    </div>
-    `;
+            <div class="card p-4 m-2" style="width: 18rem;">
+              <img src="${phone.image}" class="card-img-top img-fluid h-50" alt="Phone Image">
+            <div class="card-body">
+              <h5 class="card-title">${phone.phone_name}</h5>
+              <h6 class="card-title">${phone.brand}</h6>
+              
+              <a href="#" onClick="phoneDet('${phone.slug}')" class="btn btn-outline-primary">See Details</a>
+            </div>
+            </div>
+            `;
           parent.appendChild(div);
         });
       })
