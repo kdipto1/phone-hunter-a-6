@@ -1,3 +1,4 @@
+/* 😀Get data and and show error message😀 */
 const inputSearchButton = () => {
   const searchText = document.getElementById("search-field").value;
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
@@ -12,6 +13,7 @@ const inputSearchButton = () => {
         const parentPhone = document.getElementById("phone-details");
         parentPhone.innerHTML = "";
         document.getElementById("found").innerText = "";
+        document.getElementById("show-more").style.display = "none";
       }
       else {
         showSearchResult(data.data)
@@ -20,7 +22,8 @@ const inputSearchButton = () => {
       }
     });
 }
-// show results for search
+
+/* 😀show results for search😀 */
 const showSearchResult = (phones) => {
   const parent = document.getElementById("search-results");
   parent.innerHTML = "";
@@ -47,7 +50,7 @@ const showSearchResult = (phones) => {
     `;
         parent.appendChild(div);
       });
-  
+  /* 😀show more than 20 phones😀 */
     if (phones.length > 20) {
       document.getElementById("show-more").style.display = "block";
       document.getElementById("show-more").addEventListener("click", function () {
@@ -80,19 +83,15 @@ const showSearchResult = (phones) => {
    }
 }
 
-
-// phone details😀😀
+/*😀single phone detail show on click see details😀 */
 const phoneDet = id => {
   const phoneUrl = `https://openapi.programming-hero.com/api/phone/${id}`;
   fetch(phoneUrl)
   .then(res => res.json())
   .then(data => phoneDetails(data.data))
-  console.log(phoneUrl);
 }
-
 const phoneDetails = details => {
   const parentPhone = document.getElementById("phone-details");
-  // console.log(details.mainFeatures.sensors[0]);
   parentPhone.innerHTML = "";
   parentPhone.innerHTML = `
    <div class="card p-4">

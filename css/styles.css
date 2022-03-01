@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-/* common styles */
+/* common styles starts*/
 *{
   font-family: 'Poppins', sans-serif;
 }
-/* common styles */
-
+/* common styles ends*/
 #found-nothing{
   display: none;
 }
